@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BartenderApp.Models.Order>
+
+@{
+    ViewData["Title"] = "orderQueue";
+}
+
+<h1>orderQueue</h1>
+
+<p>
+   <button class="btn-primary btn"><a asp-action="addOrder" class="text-white">Create New</a></button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.orderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.drinkName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.drinkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerName)
+            </td>
+            <td>
+                <button class="btn">@Html.ActionLink("Edit", "editOrder", "Order")</button>
+                <button class="btn">@Html.ActionLink("Details", "success","Order")</button>
+                <button class="btn">@Html.ActionLink("Delete", "deleteOrder","Order")</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

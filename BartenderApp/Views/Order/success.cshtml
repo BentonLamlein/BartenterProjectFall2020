@@ -1,0 +1,35 @@
+﻿@model BartenderApp.Models.Order
+
+@{
+    ViewData["Title"] = "success";
+}
+
+<h1>Order Successfully Created!</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.orderID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.orderID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.drinkName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.drinkName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.customerName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.customerName)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Go Home", "Index", "Home") | @Html.ActionLink("Order Something Else", "addOrder", "Order")
+</div>
